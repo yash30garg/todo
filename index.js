@@ -1,11 +1,10 @@
 var div = document.createElement("DIV");
-
 var div1 = document.createElement("DIV");
-
 var div3 = document.createElement("DIV");
 var div4 = document.createElement("DIV");
 div3.className = "container";
-
+div1.setAttribute("style", "background-color: coral");
+div4.setAttribute("style", "background-color: grey")
 
 div4.className = "jumbotron text-center";
 div4.id = "div4";
@@ -23,6 +22,7 @@ var div6 = document.createElement("DIV");
 div6.className = "form-group";
 var label = document.createElement("LABEL");
 label.appendChild(document.createTextNode("What to do?"));
+label.setAttribute("style", "color: black;font-size:40px; font-family: Arial")
 var input = document.createElement("INPUT");
 input.className = "form-control";
 input.id = "enter";
@@ -31,7 +31,7 @@ div6.appendChild(label);
 div6.appendChild(input);
 div5.appendChild(div6);
 var div2 = document.createElement("DIV");
-div2.innerHTML = "<button id=add onclick=addNewElement()>ADD</button>";
+div2.innerHTML = "<button id=add onclick=addNewElement()>ADD TASK</button>";
 
 
 div5.appendChild(div2);
@@ -61,9 +61,10 @@ var addNewElement = () => {
 
 
 
-    li.innerHTML = "<div id=d" + ind + ">" + display[ind] + "</div><div class=container><div class=row><form> <div class=col-sm-4><input type=radio onclick=tododdel(" + ind + ") name=check id=Td" + ind + " checked>ToDO</input></div><div class=col-sm-4><input type=radio onclick=inpddel(" + ind + ") name=check id=Ip" + ind + ">InProgress</input></div><div class=col-sm-4><input type=radio onclick=dodel(" + ind + ") name=check id=Do" + ind + ">Done</input></div><button style=display:none id=del" + ind + " onclick=deleted(" + ind + ")>Delete</button></div></div></form></div></div></br>"
+    li.innerHTML = "<div id=d" + ind + ">" + display[ind] + "</div><div class=container><div class=row><form> <div class=col-sm-4><input type=radio onclick=tododdel(" + ind + ") name=check id=Td" + ind + " checked>To-Do</input></div><div class=col-sm-4><input type=radio onclick=inpddel(" + ind + ") name=check id=Ip" + ind + ">In-Progress</input></div><div class=col-sm-4><input type=radio onclick=dodel(" + ind + ") name=check id=Do" + ind + " style=font:24px>Done</input></div><button style=display:none id=del" + ind + " onclick=deleted(" + ind + ")>Delete TASK</button></div></div></form></div></div></br>"
     ul.appendChild(li);
-    document.getElementById("d" + ind).setAttribute("style", "color: red;font-size:36px; font-family: Times New Roman");
+
+    document.getElementById("d" + ind).setAttribute("style", "color: blue;font-size:36px; font-family: Times New Roman");
 
     document.getElementById("del" + ind).className = "btn btn-danger";
 
